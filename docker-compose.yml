@@ -11,6 +11,7 @@ services:
       - backend
     ports:
       - "3000:3000"
+
   #./backend
   backend:
     container_name: take-home-test-backend
@@ -20,6 +21,7 @@ services:
       - mongodb
     ports:
       - "4000:4000"
+
       
   #MongoDB services
   mongodb:
