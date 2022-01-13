@@ -51,5 +51,10 @@
       "unplugged": true
     }
   },
-  "packageManager": "yarn@3.0.0"
+  "packageManager": "yarn@3.0.0",
+  "dependencies": {
+    "history": "4.10.1",
+    "react-router-dom": "5.1.2",
+    "webpack-cli": "^4.9.1"
+  }
 }

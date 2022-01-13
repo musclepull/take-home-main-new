@@ -12,9 +12,9 @@ interface Query {
   ingredients?: Ingredient[]
 }
 
-const recipeCleaner = (recipe): { id: string; name: string } => {
-  const { id, name } = recipe
-  return { id, name }
+const recipeCleaner = (recipe): { _id: string; name: string } => {
+  const { _id, name } = recipe
+  return { _id, name }
 }
 
 export const searchMiddleware = async (
