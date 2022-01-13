@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+
+    #./frontend
+  web:
+    container_name: take-home-test-frontend
+    hostname: take-home-test-frontend
+    build: .
+    depends_on:
+      - backend
+    ports:
+      - "3000:3000"
+  #./backend
+  backend:
+    container_name: take-home-test-backend
+    hostname: take-home-test-backend
+    build: .
+    depends_on:
+      - mongodb
+    ports:
+      - "4000:4000"
+      
+  #MongoDB services
+  mongodb:
+    container_name: db_container
+    hostname: take-home-test-db
+    image: mongo:latest
+    restart: always
+
