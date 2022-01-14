@@ -1,32 +1,38 @@
-version: "3.8"
 
+version: '3.1'
+volumes:
+  mongo_data:
 services:
-
-    #./frontend
-  web:
-    container_name: take-home-test-frontend
-    hostname: take-home-test-frontend
-    build: .
-    depends_on:
-      - backend
-    ports:
-      - "3000:3000"
-
-  #./backend
   backend:
-    container_name: take-home-test-backend
-    hostname: take-home-test-backend
-    build: .
-    depends_on:
-      - mongodb
+    restart: unless-stopped
+    image: backend:latest
     ports:
-      - "4000:4000"
+      - 4000:4000
+    volumes:
+      - ./backend:/user/src/app
+    links:
+      - mongo
+    command: yarn start
+    tty: true
+    stdin_open: true
 
-      
-  #MongoDB services
-  mongodb:
-    container_name: db_container
-    hostname: take-home-test-db
-    image: mongo:latest
-    restart: always
+  frontend:
+    restart: unless-stopped
+    image: frontend:latest
+    ports:
+      - 3000:3000
+    volumes:
+      - ./frontend:/usr/src/app
+    links:
+      - backend
+    command: yarn start
+    tty: true
+    stdin_open: true
 
+  mongo:
+    restart: unless-stopped
+    image: mongo:3.6.4
+    volumes:
+      - mongo_data:/data/db
+    ports:
+      - 27017:27017
