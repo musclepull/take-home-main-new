@@ -16,6 +16,13 @@
     "lint": "yarn workspaces foreach -ptv -j 2 run lint",
     "start": "yarn workspaces foreach -piv -j 2 run start"
   },
+  "config": {
+    "mongodbMemoryServer": {
+      "version": "latest",
+      "debug": "1",
+      "arch": "x64"
+    }
+  },
   "devDependencies": {
     "@babel/core": "7.14.8",
     "@babel/plugin-proposal-class-properties": "7.14.5",

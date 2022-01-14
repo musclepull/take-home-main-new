@@ -1,7 +1,13 @@
 
 version: '3.1'
+
 volumes:
   mongo_data:
+
+networks:
+  app-tier:
+    driver: bridge
+
 services:
   backend:
     restart: unless-stopped
@@ -15,6 +21,8 @@ services:
     command: yarn start
     tty: true
     stdin_open: true
+    networks:
+      - app-tier
 
   frontend:
     restart: unless-stopped
@@ -28,11 +36,15 @@ services:
     command: yarn start
     tty: true
     stdin_open: true
+    networks:
+      - app-tier
 
   mongo:
     restart: unless-stopped
-    image: mongo:3.6.4
+    image: bitnami/mongodb:latest
     volumes:
       - mongo_data:/data/db
     ports:
       - 27017:27017
+    networks:
+      - app-tier

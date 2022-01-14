@@ -43,12 +43,19 @@ module.exports = {
   },
   devServer: {
     port: 3000,
+    host: '0.0.0.0',
     historyApiFallback: true,
     filename: "[name].bundle.js",
     proxy: {
-      "/api/**": {
-        target: "http://localhost:4000/",
+      '/api': {
+        target: {
+          host: "backend",
+          protocol: 'http:',
+          port: 4000
+        },
+        ignorePath: true,
         changeOrigin: true,
+        secure: false
       },
     },
     watchOptions: {

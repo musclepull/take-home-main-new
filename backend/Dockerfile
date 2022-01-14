@@ -1,11 +1,10 @@
 FROM node:16
 
-WORKDIR /usr/src/app
-
-COPY . .
+WORKDIR /app
+COPY package.json /app
+RUN npm install
+COPY . /app
 
 EXPOSE 4000
 
-RUN yarn
-
-CMD ["npm", "yarn", "start"]
+CMD npm start
