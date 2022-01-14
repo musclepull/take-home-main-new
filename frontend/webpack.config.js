@@ -43,6 +43,38 @@ module.exports = {
   },
   devServer: {
     port: 3000,
+    historyApiFallback: true,
+    proxy: {
+      "/api/**": {
+        target: "http://localhost:4000/",
+        changeOrigin: true,
+      },
+    },
+    watchOptions: {
+      aggregateTimeout: 300,
+      poll: 1000,
+    },
+  },
+
+  /*
+      devServer: {
+      port: 3000,
+      historyApiFallback: true,
+      proxy: {
+        "/api/**": {
+          target: "http://localhost:4000/",
+          changeOrigin: true,
+        },
+      },
+      watchOptions: {
+        aggregateTimeout: 300,
+        poll: 1000,
+      },
+    },
+
+
+    devServer: {
+    port: 3000,
     host: '0.0.0.0',
     historyApiFallback: true,
     filename: "[name].bundle.js",
@@ -57,12 +89,9 @@ module.exports = {
         changeOrigin: true,
         secure: false
       },
-    },
-    watchOptions: {
-      aggregateTimeout: 300,
-      poll: 1000,
-    },
+    }
   },
+  */
   plugins: [
     new HtmlWebpackPlugin({
       title: "what can you make",
