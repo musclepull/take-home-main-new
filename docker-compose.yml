@@ -1,50 +1,37 @@
-
-version: '3.1'
-
-volumes:
-  mongo_data:
-
-networks:
-  app-tier:
-    driver: bridge
-
+version: "3"
 services:
-  backend:
-    restart: unless-stopped
-    image: backend:latest
-    ports:
-      - 4000:4000
-    volumes:
-      - ./backend:/user/src/app
-    links:
-      - mongo
-    command: yarn start
-    tty: true
-    stdin_open: true
-    networks:
-      - app-tier
-
   frontend:
-    restart: unless-stopped
-    image: frontend:latest
-    ports:
-      - 3000:3000
-    volumes:
-      - ./frontend:/usr/src/app
-    links:
-      - backend
-    command: yarn start
-    tty: true
+    image: frontend
     stdin_open: true
+    ports: 
+      - "3000:3000"
     networks:
-      - app-tier
-
-  mongo:
-    restart: unless-stopped
-    image: bitnami/mongodb:latest
+      - take-home-app
     volumes:
-      - mongo_data:/data/db
+      - ./frontend/:/usr/src/app
+      - /usr/src/app/node_modules
+  backend:
+    image: backend
     ports:
-      - 27017:27017
+      - "4000:4000"
     networks:
-      - app-tier
+      - take-home-app
+    volumes:
+      - ./backend/:/usr/src/app
+      - /usr/src/app/node_modules
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo:4.4-bionic
+    ports:
+      - "27017:27017"
+    networks:
+      - take-home-app
+    volumes:
+      - mongo-data:/data/db
+networks:
+  take-home-app:
+    driver: bridge
+volumes:
+  mongo-data:
+    driver: local

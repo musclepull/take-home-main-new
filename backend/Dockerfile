@@ -1,10 +1,14 @@
 FROM node:16
 
-WORKDIR /app
-COPY package.json /app
-RUN npm install
-COPY . /app
+WORKDIR /usr/src/app
 
-EXPOSE 4000
+COPY ./package.json ./
+COPY ./yarn.lock ./
 
-CMD npm start
+RUN yarn
+
+COPY . .
+
+EXPOSE 5000
+
+CMD [ "yarn", "start" ]

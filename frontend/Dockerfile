@@ -1,14 +1,16 @@
 FROM node:16
 
-RUN npm install webpack-dev-server -g
-RUN npm install webpack-cli -g
-RUN npm install html-webpack-plugin -g
+WORKDIR /usr/src/app
 
-WORKDIR /app
-COPY package.json /app
-RUN npm install
-COPY . /app
+COPY ./package.json ./
+COPY ./yarn.lock ./
+
+RUN yarn install
+
+COPY . .
+
+ENV REACT_APP_BASE_URL=http://localhost:4000/api
 
 EXPOSE 3000
 
-CMD npm start
+CMD [ "yarn", "start" ]
