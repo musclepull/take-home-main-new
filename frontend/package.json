@@ -13,6 +13,15 @@
     "dev-be": "node --inspect -r ts-node/register server/index.ts",
     "dev-be-brk": "node --inspect-brk -r ts-node/register server/index.ts"
   },
+  "jest": {
+    "verbose": true,
+    "clearMocks": true,
+    "collectCoverage": true,
+    "setupTestFrameworkScriptFile": "<rootDir>/src/setupTest.js",
+    "transform": {
+      "^.+\\.(js|jsx)$": "babel-jest"
+    }
+  },
   "dependencies": {
     "@material-ui/core": "4.9.5",
     "history": "4.10.1",
@@ -31,6 +40,8 @@
     "@babel/plugin-transform-runtime": "7.12.10",
     "@babel/preset-env": "7.12.11",
     "@babel/preset-react": "7.12.10",
+    "@babel/runtime": "^7.16.7",
+    "@babel/types": "^7.16.8",
     "babel-eslint": "10.1.0",
     "babel-loader": "8.0.6",
     "esbuild": "0.12.18",

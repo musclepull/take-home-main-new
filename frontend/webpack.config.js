@@ -31,13 +31,20 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js?$/,
+        test: /\.(js|jsx)$/,
+        exclude: /(node_modules|bower_components)/,
         include: [srcDir],
         loader: require.resolve("esbuild-loader"),
         options: {
           loader: "jsx",
           target: "es2018",
         },
+      },
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /(node_modules|bower_components)/,
+        loader: 'babel-loader',
+        options: { presets: ['@babel/env','@babel/preset-react'] },
       },
     ],
   },
