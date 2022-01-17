@@ -1749,7 +1749,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ],
       [
         "esbuild",
-        "npm:0.12.18"
+        "npm:0.12.28"
       ],
       [
         "esbuild-loader",
@@ -4314,7 +4314,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["babel-loader", "virtual:92512464fbf4815f6bc9a2cf49746f15e459e97d13bcfb3c37cdf61d2578992421f19c55b3c6f24ec7d8c722225134212ea766641f1c038d30be1faad0eb344d#npm:8.2.2"],
             ["babel-plugin-named-asset-import", "virtual:92512464fbf4815f6bc9a2cf49746f15e459e97d13bcfb3c37cdf61d2578992421f19c55b3c6f24ec7d8c722225134212ea766641f1c038d30be1faad0eb344d#npm:0.3.7"],
             ["babel-preset-react-app", "npm:9.1.2"],
-            ["esbuild", "npm:0.12.18"],
+            ["esbuild", "npm:0.12.28"],
             ["esbuild-register", "npm:2.6.0"],
             ["history", "npm:4.10.1"],
             ["nodemon", "npm:2.0.7"],
@@ -13330,7 +13330,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["debug", "virtual:12c37407ab12ae73a24baf32ea7a908f64cb1e2490585bd0fa776dedc35e3c74386451dc3764b684ba14eb4e2449810eff25a37c63df7ccf0fb8ddea5253d3d1#npm:3.2.7"],
             ["ms", "npm:2.1.3"],
-            ["supports-color", "npm:9.2.1"]
+            ["supports-color", null]
+          ],
+          "packagePeers": [
+            "supports-color"
           ],
           "linkType": "HARD",
         }],
@@ -13339,7 +13342,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["debug", "virtual:72d46d4b8165804b5935c946809d705c2ef8745b53db4c71d337aa3a4c7c5fb619e2ea9e1493456d326dcc840e7bc7783bd6186ab0a771946b420c810bcd3b6f#npm:4.3.3"],
             ["ms", "npm:2.1.2"],
-            ["supports-color", "npm:9.2.1"]
+            ["supports-color", null]
+          ],
+          "packagePeers": [
+            "supports-color"
           ],
           "linkType": "HARD",
         }],
@@ -13360,7 +13366,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["debug", "virtual:8c7b0868150f0b9eaf5da2423272e5980fc806fd70f1c69c32d78a1dcd22901757bea59103bbb018fd6988708d2a6c18b16441380d175b151743a073cd2daf4e#npm:4.3.2"],
             ["ms", "npm:2.1.2"],
-            ["supports-color", "npm:9.2.1"]
+            ["supports-color", null]
+          ],
+          "packagePeers": [
+            "supports-color"
           ],
           "linkType": "HARD",
         }],
@@ -13369,7 +13378,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["debug", "virtual:904b3fada4a3265c4dfeed8c42d6542b5b497582d17441c86eea102109bfc3b9e1825aad904bc43dd1b94603ff4820b8cb2ebcf24cfbaf45ecee04e5bc1076b8#npm:4.3.1"],
             ["ms", "npm:2.1.2"],
-            ["supports-color", "npm:9.2.1"]
+            ["supports-color", null]
+          ],
+          "packagePeers": [
+            "supports-color"
           ],
           "linkType": "HARD",
         }],
@@ -13390,7 +13402,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["debug", "virtual:ce5f7e2bb1b7f4095649047ca6318b6ca89dc972e9361c95030a080bc15dedfcd36c6ad1bb01a681d051a8e1766899039d1a9ddceeff9d2a2c0650a4aeda303b#npm:2.6.9"],
             ["ms", "npm:2.0.0"],
-            ["supports-color", "npm:9.2.1"]
+            ["supports-color", null]
+          ],
+          "packagePeers": [
+            "supports-color"
           ],
           "linkType": "HARD",
         }]
@@ -21167,13 +21182,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["has-flag", "npm:4.0.0"]
           ],
           "linkType": "HARD",
-        }],
-        ["npm:9.2.1", {
-          "packageLocation": "./.yarn/cache/supports-color-npm-9.2.1-1ef7bf7d73-8a2bfeb64c.zip/node_modules/supports-color/",
-          "packageDependencies": [
-            ["supports-color", "npm:9.2.1"]
-          ],
-          "linkType": "HARD",
         }]
       ]],
       ["supports-preserve-symlinks-flag", [
@@ -22357,7 +22365,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["babel-loader", "virtual:92512464fbf4815f6bc9a2cf49746f15e459e97d13bcfb3c37cdf61d2578992421f19c55b3c6f24ec7d8c722225134212ea766641f1c038d30be1faad0eb344d#npm:8.2.2"],
             ["babel-plugin-named-asset-import", "virtual:92512464fbf4815f6bc9a2cf49746f15e459e97d13bcfb3c37cdf61d2578992421f19c55b3c6f24ec7d8c722225134212ea766641f1c038d30be1faad0eb344d#npm:0.3.7"],
             ["babel-preset-react-app", "npm:9.1.2"],
-            ["esbuild", "npm:0.12.18"],
+            ["esbuild", "npm:0.12.28"],
             ["esbuild-register", "npm:2.6.0"],
             ["history", "npm:4.10.1"],
             ["nodemon", "npm:2.0.7"],

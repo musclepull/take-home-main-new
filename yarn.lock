@@ -5818,21 +5818,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"esbuild@npm:0.12.28, esbuild@npm:^0.12.8":
+  version: 0.12.28
+  resolution: "esbuild@npm:0.12.28"
+  bin:
+    esbuild: bin/esbuild
+  checksum: 9127dc048aad41a59d736460b9ea3cf5e367a7e5a650b2b465e066ee291e3c5e9fa5ad4b56cd4dea76cde9a1dee25a0e9e94f558b24170fc124eb0778e043eae
+  languageName: node
+  linkType: hard
+
 "esbuild@npm:^0.11.19":
   version: 0.11.23
   resolution: "esbuild@npm:0.11.23"
   bin:
     esbuild: bin/esbuild
   checksum: d55bea84f94e7854fa6fb013ffc63747f2286001b3d73c2a7beb605e6e4847c24ff2cde0660f03045d06d083695c8082423b007a9ee8687e70b52719458bfdd6
-  languageName: node
-  linkType: hard
-
-"esbuild@npm:^0.12.8":
-  version: 0.12.28
-  resolution: "esbuild@npm:0.12.28"
-  bin:
-    esbuild: bin/esbuild
-  checksum: 9127dc048aad41a59d736460b9ea3cf5e367a7e5a650b2b465e066ee291e3c5e9fa5ad4b56cd4dea76cde9a1dee25a0e9e94f558b24170fc124eb0778e043eae
   languageName: node
   linkType: hard
 
@@ -11996,13 +11996,6 @@ resolve@^1.9.0:
   languageName: node
   linkType: hard
 
-"supports-color@npm:*":
-  version: 9.2.1
-  resolution: "supports-color@npm:9.2.1"
-  checksum: 8a2bfeb64c1512d21a1a998c1f64acdaa85cf1f6a101627286548f19785524b329d7b28d567a28fc2d708fc7aba32f4c82a9b224f76b30a337a39d3e53418ff7
-  languageName: node
-  linkType: hard
-
 "supports-color@npm:6.1.0, supports-color@npm:^6.1.0":
   version: 6.1.0
   resolution: "supports-color@npm:6.1.0"
@@ -13036,7 +13029,7 @@ typescript@4.2.4:
     babel-loader: 8.2.2
     babel-plugin-named-asset-import: 0.3.7
     babel-preset-react-app: 9.1.2
-    esbuild: 0.12.18
+    esbuild: "npm:0.12.28"
     esbuild-register: 2.6.0
     history: 4.10.1
     nodemon: 2.0.7
