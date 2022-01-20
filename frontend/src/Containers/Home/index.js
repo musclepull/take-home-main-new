@@ -96,6 +96,7 @@ class Home extends Component {
     return (
       <HomeWrapper>
         <Input
+          id="searchInput"
           autoFocus={true}
           fullWidth={true}
           onChange={this.handleSearch}

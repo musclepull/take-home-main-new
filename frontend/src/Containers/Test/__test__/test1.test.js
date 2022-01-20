@@ -1,23 +1,25 @@
-const puppeteer = require('puppeteer')
-let browser
-const timeout = 5000;
+import ReactDom  from "react-dom"
+import Test1 from "../test1"
+import renderer from 'react-test-renderer'
 
-describe(
-  "/ (Home Page)",
-  () => {
-    let page;
-    beforeAll(async () => {
-      console.log("beforeAll: launching browser") // --> gets printed
-      browser = await puppeteer.launch()
-      console.log("beforeAll: browser launched") // --> doesn't get printed
-      page = await global.__BROWSER__.newPage();
-      await page.goto("https://google.com");
-    }, timeout);
+const puppeteer = require("puppeteer");
 
-    it("should load without error", async () => {
-      const text = await page.evaluate(() => document.body.textContent);
-      expect(text).toContain("google");
-    });
-  },
-  timeout
-);
+(async function() {
+    // headless: false
+    // to see the result in the browser
+    const browser = await puppeteer.launch({ headless: false });
+    const page = await browser.newPage();
+
+    // let's do some navigation
+    await page.goto("http://admin.zoomprospector.com")
+
+    // create a new page and go back
+    // important: the page created here does not share the history
+    const backPage = await browser.newPage();
+
+    // see results
+    await page.screenshot({ path: "page.png" });
+
+    // uncomment if you use headless chrome
+    // await browser.close();
+})();

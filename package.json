@@ -43,7 +43,6 @@
     "babel-loader": "8.2.2",
     "babel-plugin-named-asset-import": "0.3.7",
     "babel-preset-react-app": "9.1.2",
-    "esbuild": "npm:0.12.28",
     "esbuild-register": "2.6.0",
     "nodemon": "2.0.7",
     "prettier": "2.3.2",
@@ -64,8 +63,10 @@
   "packageManager": "yarn@3.0.0",
   "dependencies": {
     "@babel/types": "^7.16.8",
+    "esbuild": "^0.14.11",
     "history": "4.10.1",
     "jest": "^27.4.7",
+    "puppeteer": "^13.1.1",
     "react-router-dom": "5.1.2",
     "react-scripts": "^5.0.0",
     "react-test-renderer": "^17.0.2",
